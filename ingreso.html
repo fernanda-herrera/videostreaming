@@ -1,76 +1,100 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Registro simple</title>
     <link rel="stylesheet" href="ingreso.css">
-   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  </head>
-  <body>
-    <div class="bg-img">
-      <div class="content">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<div class="bg-img" id="app">
+    <div class="content">
         <header>Formulario de ingreso</header>
-        <form action="#" name="RegForm" action="/submit.php" onsubmit="return REGISTROSIMPLE()" method="post">
-          <div class="field">
-            <span class="fa fa-user"></span>
-            <input type="text" required placeholder="Nombre" name="Nombre">
-          </div>
-          <div class="field">
-            <span class="fa fa-envelope"></span>
-            <input type="text" required placeholder="Email" name="Email">
-          </div>
-          <div class="field">
-            <span class="fa fa-phone"></span>
-            <input type="text" required placeholder="Télefono" name="telefono">
-          </div>
-          <div class="field">
-            <span class="fa fa-map"></span>
-            <input type="text" required placeholder="Dirección" name="direccion">
-          </div>
-<div class="field">
-            <input type="submit" value="ENTRAR">
-          </div>
-</form>
-
-
+        <form v-on:submit.prevent="onForm">
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input v-model="form.name" type="text" required placeholder="Nombre" name="Nombre">
+            </div>
+            <div class="field">
+                <span class="fa fa-envelope"></span>
+                <input v-model="form.email" type="text" required placeholder="Email" name="Email">
+            </div>
+            <div class="field">
+                <span class="fa fa-phone"></span>
+                <input v-model="form.phone" type="text" required placeholder="Télefono" name="telefono">
+            </div>
+            <div class="field">
+                <span class="fa fa-map"></span>
+                <input v-model="form.adress" type="text" required placeholder="Dirección" name="direccion">
+            </div>
+            <div class="field">
+                <input type="submit" value="ENTRAR">
+            </div>
+        </form>
+    </div>
 </div>
-</div>
-<script> 
-    function REGISTROSIMPLE()                                    
-    { 
-        var nombre = document.forms["RegForm"]["nombre"];               
-        var email = document.forms["RegForm"]["EMail"];    
-        var telefono = document.forms["RegForm"]["telefono"];  
-        var direccion = document.forms["RegForm"]["direccion"];  
-       
-        if (nombre.value == "")                                  
-        { 
-            window.alert("Porfavor ingrese su nombre."); 
-            nombre.focus(); 
-            return false; 
-        } 
-       
-        if (direccion.value == "")                               
-        { 
-            window.alert("Porfavor ingrese su direccion."); 
-           direccion.focus(); 
-            return false; 
-        } 
-           
-        if (email.value == "")                                   
-        { 
-            window.alert("Porfavor ingrese una direccion de correo valida."); 
-            email.focus(); 
-            return false; 
-        } 
-       
-        if (telefono.value == "")                           
-        { 
-            window.alert("Porfavor ingrese su numero de telefono."); 
-            telefono.focus(); 
-            return false; 
-        } 
-    RegForm.submit();
-       </script> 
-  </body>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            form: {
+                name: '',
+                email: '',
+                phone: '',
+                adress: ''
+            }
+        },
+        methods: {
+            onForm() {
+                axios.post('http://api.oo/api/register', {
+                  name: this.form.name,
+                  mail: this.form.email,
+                  phone: this.form.phone,
+                  adress: this.form.adress
+                })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        }
+    });
+
+    function REGISTROSIMPLE() {
+        var nombre = document.forms["RegForm"]["nombre"];
+        var email = document.forms["RegForm"]["EMail"];
+        var telefono = document.forms["RegForm"]["telefono"];
+        var direccion = document.forms["RegForm"]["direccion"];
+
+        if (nombre.value == "") {
+            window.alert("Porfavor ingrese su nombre.");
+            nombre.focus();
+            return false;
+        }
+
+        if (direccion.value == "") {
+            window.alert("Porfavor ingrese su direccion.");
+            direccion.focus();
+            return false;
+        }
+
+        if (email.value == "") {
+            window.alert("Porfavor ingrese una direccion de correo valida.");
+            email.focus();
+            return false;
+        }
+
+        if (telefono.value == "") {
+            window.alert("Porfavor ingrese su numero de telefono.");
+            telefono.focus();
+            return false;
+        }
+        RegForm.submit();
+    }
+</script>
+</body>
 </html>
