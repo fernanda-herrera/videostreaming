@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promental Call</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.2.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+	<div>
+		<label>Nombre usuario</label>
+		<input  type="text" placeholder="nombre para el chat" id="myInput">
+		<button onclick="entrarAlChat()">Entrar</button>
+	</div>
+	<div id="vid-list">
+
+	</div>
+	<!--<div class="video-Container">
+		<p>Nombre</p>
+		<button>mic</button>
+		<button>cam</button>
+	</div>-->
+
+
+
+	<script src="js/rtcmain.js"></script>
+	<script src="js/rtcPublishStream.js"></script>
+	<script src="js/rtcSuscribeStreaming.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

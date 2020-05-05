@@ -1,0 +1,42 @@
+/***********************************************************************
+**														              **
+**         POLO Html5 Template		   								  **
+**         Author: INSPIRO MEDIA								      **
+**		   URL: http://www.inspiro-media.com						  **
+**														              **
+************************************************************************/
+
+/*  Core */
+@import url("scss/variables.scss");
+@import url("scss/layout.css");
+@import url("scss/typography.css");
+
+/*  Content & Layout */
+@import url("scss/topbar.css");
+@import url("scss/header.css");
+@import url("scss/sliders.css");
+@import url("scss/page-title.css");
+@import url("scss/content.css");
+@import url("scss/portfolio.css");
+@import url("scss/blog.css");
+@import url("scss/comments.css"); 
+@import url("scss/shop.css");
+
+/*  Helpers */
+@import url("scss/helpers.css");
+
+/*  Shortcodes */
+@import url("scss/elements.css");
+
+/*  Footer */
+@import url("scss/footer.css");
+
+/*  Widgets */
+@import url("scss/widgets.css");
+
+/*  Extras */
+@import url("scss/extras.css");
+
+
+
+
