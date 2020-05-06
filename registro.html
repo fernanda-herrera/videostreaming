@@ -2,44 +2,44 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	
-	
-	<link rel="shortcut icon" href="images/favicon.png">
-	<title>promental registro</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-	<!-- Bootstrap Core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-	<link href="vendor/animateit/animate.min.css" rel="stylesheet">
 
-	<!-- Vendor css -->
-	<link href="vendor/owlcarousel/owl.carousel.css" rel="stylesheet">
-	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>promental registro</title>
 
-	<!-- Template base -->
-	<link href="css/theme-base.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/ingreso.css">
-	<!-- Template elements -->
-	<link href="css/theme-elements.css" rel="stylesheet">	
-    
-    
-	<!-- Responsive classes -->
-	<link href="css/responsive.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/animateit/animate.min.css" rel="stylesheet">
 
-	<!--[if lt IE 9]>
+    <!-- Vendor css -->
+    <link href="vendor/owlcarousel/owl.carousel.css" rel="stylesheet">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Template base -->
+    <link href="css/theme-base.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ingreso.css">
+    <!-- Template elements -->
+    <link href="css/theme-elements.css" rel="stylesheet">
+
+
+    <!-- Responsive classes -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->		
+	<![endif]-->
 
-	<!-- Template color -->
-	<link href="css/color-variations/blue.css" rel="stylesheet" type="text/css" media="screen" title="blue">
+    <!-- Template color -->
+    <link href="css/color-variations/blue.css" rel="stylesheet" type="text/css" media="screen" title="blue">
 
-	<!-- LOAD GOOGLE FONTS -->
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- LOAD GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
 
-	<!-- CSS CUSTOM STYLE -->
+    <!-- CSS CUSTOM STYLE -->
     <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen" />
 
     <!--VENDOR SCRIPT-->
@@ -49,120 +49,124 @@
 </head>
 
 <body class="wide">
-	
 
-	<!-- WRAPPER -->
-	<div class="wrapper">
 
-		
-    
-<!-- SECTION VIDEO BACKGROUND -->
-<section id="slider" class="section-video fullscreen text-light background-overlay" data-vide-bg="video/for-benny/for-benny" data-vide-options="position: 0% 50%">
-    <div class="container container-fullscreen">
-        
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+
+
+        <!-- SECTION VIDEO BACKGROUND -->
+        <section id="slider" class="section-video fullscreen text-light background-overlay" data-vide-bg="video/for-benny/for-benny" data-vide-options="position: 0% 50%">
+            <div class="container container-fullscreen">
+
+
+            </div>
+        </section>
+        <!-- END: SECTION VIDEO BACKGROUND -->
+        <!-- END: SECTION VIDEO BACKGROUND -->
+        <div class="content">
+            <header>Formulario de ingreso</header>
+            <form v-on:submit.prevent="onForm" action="streaming.html">
+                <div class="field">
+                    <span class="fa fa-user"></span>
+                    <input v-model="form.name" type="text" required placeholder="Nombre" name="Nombre">
+                </div>
+                <div class="field">
+                    <span class="fa fa-envelope"></span>
+                    <input v-model="form.email" type="text" required placeholder="Email" name="Email">
+                </div>
+                <div class="field">
+                    <span class="fa fa-phone"></span>
+                    <input v-model="form.phone" type="text" required placeholder="Télefono" name="telefono">
+                </div>
+                <div class="field">
+                    <span class="fa fa-map"></span>
+                    <input v-model="form.adress" type="text" required placeholder="Dirección" name="direccion">
+                </div>
+                <div class="field">
+                    <input type="submit" value="ENTRAR">
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     </div>
-</section>
-<!-- END: SECTION VIDEO BACKGROUND -->
-<!-- END: SECTION VIDEO BACKGROUND -->
-<div class="content">
-	<header>Formulario de ingreso</header>
-        <form v-on:submit.prevent="onForm">
-            <div class="field">
-                <span class="fa fa-user"></span>
-                <input v-model="form.name" type="text" required placeholder="Nombre" name="Nombre">
-            </div>
-            <div class="field">
-                <span class="fa fa-envelope"></span>
-                <input v-model="form.email" type="text" required placeholder="Email" name="Email">
-            </div>
-            <div class="field">
-                <span class="fa fa-phone"></span>
-                <input v-model="form.phone" type="text" required placeholder="Télefono" name="telefono">
-            </div>
-            <div class="field">
-                <span class="fa fa-map"></span>
-                <input v-model="form.adress" type="text" required placeholder="Dirección" name="direccion">
-            </div>
-            <div class="field">
-                <input type="submit" value="ENTRAR">
-            </div>
-        </form>
-    </div>
-</div>
+    <!-- END: WRAPPER -->
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                form: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    adress: ''
+                }
+            },
+            methods: {
+                onForm() {
+                    axios.post('http://api.oo/api/register', {
+                            name: this.form.name,
+                            mail: this.form.email,
+                            phone: this.form.phone,
+                            adress: this.form.adress
+                        })
+                        .then(function(response) {
+                            console.log(response);
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        })
+                        .then(function(action) {
+                            console.log(action);
+                        });
 
-
-</div>
-<!-- END: WRAPPER -->
-<script src="js/vue.js"></script>
-<script src="js/axios.js"></script>
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            form: {
-                name: '',
-                email: '',
-                phone: '',
-                adress: ''
+                }
             }
-        },
-        methods: {
-            onForm() {
-                axios.post('http://api.oo/api/register', {
-                  name: this.form.name,
-                  mail: this.form.email,
-                  phone: this.form.phone,
-                  adress: this.form.adress
-                })
-                    .then(function (response) {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
+        });
+
+        function REGISTROSIMPLE() {
+            var nombre = document.forms["RegForm"]["nombre"];
+            var email = document.forms["RegForm"]["EMail"];
+            var telefono = document.forms["RegForm"]["telefono"];
+            var direccion = document.forms["RegForm"]["direccion"];
+
+            if (nombre.value == "") {
+                window.alert("Porfavor ingrese su nombre.");
+                nombre.focus();
+                return false;
+            }
+
+            if (direccion.value == "") {
+                window.alert("Porfavor ingrese su direccion.");
+                direccion.focus();
+                return false;
+            }
+
+            if (email.value == "") {
+                window.alert("Porfavor ingrese una direccion de correo valida.");
+                email.focus();
+                return false;
+            }
+
+            if (telefono.value == "") {
+                window.alert("Porfavor ingrese su numero de telefono.");
+                telefono.focus();
+                return false;
             }
         }
-    });
+    </script>
+    <!-- Theme Base, Components and Settings -->
+    <script src="js/theme-functions.js"></script>
 
-    function REGISTROSIMPLE() {
-        var nombre = document.forms["RegForm"]["nombre"];
-        var email = document.forms["RegForm"]["EMail"];
-        var telefono = document.forms["RegForm"]["telefono"];
-        var direccion = document.forms["RegForm"]["direccion"];
-
-        if (nombre.value == "") {
-            window.alert("Porfavor ingrese su nombre.");
-            nombre.focus();
-            return false;
-        }
-
-        if (direccion.value == "") {
-            window.alert("Porfavor ingrese su direccion.");
-            direccion.focus();
-            return false;
-        }
-
-        if (email.value == "") {
-            window.alert("Porfavor ingrese una direccion de correo valida.");
-            email.focus();
-            return false;
-        }
-
-        if (telefono.value == "") {
-            window.alert("Porfavor ingrese su numero de telefono.");
-            telefono.focus();
-            return false;
-        }
-        RegForm.submit();
-    }
-</script>
-	<!-- Theme Base, Components and Settings -->
-	<script src="js/theme-functions.js"></script>
-
-<!-- Custom js file -->
-<script src="js/custom.js"></script>
+    <!-- Custom js file -->
+    <script src="js/custom.js"></script>
 
 
 </body>
+
 </html>
