@@ -8,7 +8,7 @@
 	
 	
 	<link rel="shortcut icon" href="images/favicon.png">
-	<title>POLO | The Multi-Purpose HTML5 Template</title>
+	<title>promental registro</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -67,78 +67,96 @@
 <!-- END: SECTION VIDEO BACKGROUND -->
 <div class="content">
 	<header>Formulario de ingreso</header>
-	<form id="RegForm" name="RegForm" action=""  method="post">
-	  <div class="field">
-		<span class="fa fa-user"></span>
-		<input type="text" required placeholder="Nombre" name="Name">
-	  </div>
-	  <div class="field">
-		<span class="fa fa-envelope"></span>
-		<input type="text" required placeholder="Email" name="mail">
-	  </div>
-	  <div class="field">
-		<span class="fa fa-phone"></span>
-		<input type="text" required placeholder="Télefono" name="phone">
-	  </div>
-	  <div class="field">
-		<span class="fa fa-map"></span>
-		<input type="text" required placeholder="Dirección" name="adress">
-	  </div>
-<div class="field">
-		<input type="submit" value="ENTRAR">
-	  </div>
-</form>
-
-
-</div>
+        <form v-on:submit.prevent="onForm">
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input v-model="form.name" type="text" required placeholder="Nombre" name="Nombre">
+            </div>
+            <div class="field">
+                <span class="fa fa-envelope"></span>
+                <input v-model="form.email" type="text" required placeholder="Email" name="Email">
+            </div>
+            <div class="field">
+                <span class="fa fa-phone"></span>
+                <input v-model="form.phone" type="text" required placeholder="Télefono" name="telefono">
+            </div>
+            <div class="field">
+                <span class="fa fa-map"></span>
+                <input v-model="form.adress" type="text" required placeholder="Dirección" name="direccion">
+            </div>
+            <div class="field">
+                <input type="submit" value="ENTRAR">
+            </div>
+        </form>
+    </div>
 </div>
 
 
 </div>
 <!-- END: WRAPPER -->
-<script> 
-	function REGISTROSIMPLE()                                    
-	{ 
-		var name = document.forms["RegForm"]["nombre"];               
-		var mail = document.forms["RegForm"]["EMail"];    
-		var phone = document.forms["RegForm"]["telefono"];  
-		var adress = document.forms["RegForm"]["direccion"];  
-	   
-		if (name.value == "")                                  
-		{ 
-			window.alert("Porfavor ingrese su nombre."); 
-			name.focus(); 
-			return false; 
-		} 
-	   
-		if (adress.value == "")                               
-		{ 
-			window.alert("Porfavor ingrese su direccion."); 
-		   adress.focus(); 
-			return false; 
-		} 
-		   
-		if (mail.value == "")                                   
-		{ 
-			window.alert("Porfavor ingrese una direccion de correo valida."); 
-			mail.focus(); 
-			return false; 
-		} 
-	   
-		if (phone.value == "")                           
-		{ 
-			window.alert("Porfavor ingrese su numero de telefono."); 
-			phone.focus(); 
-			return false; 
-		}
-	}
-	const RegForm = document.getElementById("RegForm");
-	RegForm.addEventListener("submit", (e)=> {
-		e.preventDefault();
-		console.log("se ha enviado con exito");
-	});
-	
-	   </script> 
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            form: {
+                name: '',
+                email: '',
+                phone: '',
+                adress: ''
+            }
+        },
+        methods: {
+            onForm() {
+                axios.post('http://api.oo/api/register', {
+                  name: this.form.name,
+                  mail: this.form.email,
+                  phone: this.form.phone,
+                  adress: this.form.adress
+                })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        }
+    });
+
+    function REGISTROSIMPLE() {
+        var nombre = document.forms["RegForm"]["nombre"];
+        var email = document.forms["RegForm"]["EMail"];
+        var telefono = document.forms["RegForm"]["telefono"];
+        var direccion = document.forms["RegForm"]["direccion"];
+
+        if (nombre.value == "") {
+            window.alert("Porfavor ingrese su nombre.");
+            nombre.focus();
+            return false;
+        }
+
+        if (direccion.value == "") {
+            window.alert("Porfavor ingrese su direccion.");
+            direccion.focus();
+            return false;
+        }
+
+        if (email.value == "") {
+            window.alert("Porfavor ingrese una direccion de correo valida.");
+            email.focus();
+            return false;
+        }
+
+        if (telefono.value == "") {
+            window.alert("Porfavor ingrese su numero de telefono.");
+            telefono.focus();
+            return false;
+        }
+        RegForm.submit();
+    }
+</script>
 	<!-- Theme Base, Components and Settings -->
 	<script src="js/theme-functions.js"></script>
 

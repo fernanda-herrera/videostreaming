@@ -67,3 +67,5 @@ function muteLocalVideo(){
 
 	}
 }
+
+$('.modal-wrapper').delay(80000).fadeOut('fast');
