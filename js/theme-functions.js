@@ -1925,7 +1925,7 @@ var INSPIRO = {};
 
     //new popup
     $(document).ready(function() {
-        $('.overlay_popup').delay(500).queue(function() {
+        $('.overlay_popup').delay(300).queue(function() {
             $('.overlay_popup').addClass('popup-open')
         });
     });

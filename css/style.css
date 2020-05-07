@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #fafafa;
+    background: #001e6f;
 }
 
 p {
@@ -35,15 +35,19 @@ p {
 }
 
 .camButton {
-    background-color: red;
+    background-image: url(images/cam-on.svg);
+    font-size: 0;
 }
 
 .micButton {
     background-color: grey;
+    font-size: 0;
 }
 
 .leaveButton {
     background-color: green;
+    margin-left: 150px;
+    font-size: 0;
 }
 
 .embeed {
