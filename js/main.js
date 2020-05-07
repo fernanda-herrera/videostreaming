@@ -22,14 +22,14 @@ function addVidContainer(idElement, local) {
         muteCam = false;
         var mic = document.createElement("BUTTON");
         mic.innerHTML = "mic";
-        mic.setAttribute("onclick", 'muteLocalMic()');
+        mic.setAttribute("onclick", 'muteLocalMic();$(this).toggleClass("off");');
         mic.setAttribute("class", "micButton");
         var cam = document.createElement("BUTTON");
         cam.innerHTML = "cam";
-        cam.setAttribute("onclick", 'muteLocalVideo()');
+        cam.setAttribute("onclick", 'muteLocalVideo();$(this).toggleClass("off");');
         cam.setAttribute("class", "camButton");
         var leave = document.createElement("BUTTON");
-        leave.innerHTML = "salir"
+        leave.innerHTML = "leave"
         leave.setAttribute("onclick", 'leaveChanelLocal()');
         leave.setAttribute("class", "leaveButton");
         div.appendChild(mic);
