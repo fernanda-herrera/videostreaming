@@ -1,7 +1,7 @@
 //Global var
 var INSPIRO = {};
 
-(function ($) {
+(function($) {
 
     // USE STRICT
     "use strict";
@@ -90,7 +90,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
 
     //Check if function exists
-    $.fn.exists = function () {
+    $.fn.exists = function() {
         return this.length > 0;
     };
 
@@ -99,22 +99,22 @@ var INSPIRO = {};
     // MOBILE CHECK
     //----------------------------------------------------/
     var isMobile = {
-        Android: function () {
+        Android: function() {
             return navigator.userAgent.match(/Android/i);
         },
-        BlackBerry: function () {
+        BlackBerry: function() {
             return navigator.userAgent.match(/BlackBerry/i);
         },
-        iOS: function () {
+        iOS: function() {
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
         },
-        Opera: function () {
+        Opera: function() {
             return navigator.userAgent.match(/Opera Mini/i);
         },
-        Windows: function () {
+        Windows: function() {
             return navigator.userAgent.match(/IEMobile/i);
         },
-        any: function () {
+        any: function() {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
@@ -123,80 +123,76 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // RESPONSIVE CLASSES
     //----------------------------------------------------/
-    INSPIRO.responsiveClasses = function () {
+    INSPIRO.responsiveClasses = function() {
 
-        var jRes = jRespond([
-            {
-                label: 'smallest',
-                enter: 0,
-                exit: 479
-                }, {
-                label: 'handheld',
-                enter: 480,
-                exit: 767
-                }, {
-                label: 'tablet',
-                enter: 768,
-                exit: 991
-                }, {
-                label: 'laptop',
-                enter: 992,
-                exit: 1199
-                }, {
-                label: 'desktop',
-                enter: 1200,
-                exit: 10000
-                }
-            ]);
-        jRes.addFunc([
-            {
-                breakpoint: 'desktop',
-                enter: function () {
-                    $body.addClass('device-lg');
-                },
-                exit: function () {
-                    $body.removeClass('device-lg');
-                }
-                }, {
-                breakpoint: 'laptop',
-                enter: function () {
-                    $body.addClass('device-md');
-                },
-                exit: function () {
-                    $body.removeClass('device-md');
-                }
-                }, {
-                breakpoint: 'tablet',
-                enter: function () {
-                    $body.addClass('device-sm');
-                },
-                exit: function () {
-                    $body.removeClass('device-sm');
-                }
-                }, {
-                breakpoint: 'handheld',
-                enter: function () {
-                    $body.addClass('device-xs');
-                },
-                exit: function () {
-                    $body.removeClass('device-xs');
-                }
-                }, {
-                breakpoint: 'smallest',
-                enter: function () {
-                    $body.addClass('device-xxs');
-                },
-                exit: function () {
-                    $body.removeClass('device-xxs');
-                }
-                }
-        ]);
+        var jRes = jRespond([{
+            label: 'smallest',
+            enter: 0,
+            exit: 479
+        }, {
+            label: 'handheld',
+            enter: 480,
+            exit: 767
+        }, {
+            label: 'tablet',
+            enter: 768,
+            exit: 991
+        }, {
+            label: 'laptop',
+            enter: 992,
+            exit: 1199
+        }, {
+            label: 'desktop',
+            enter: 1200,
+            exit: 10000
+        }]);
+        jRes.addFunc([{
+            breakpoint: 'desktop',
+            enter: function() {
+                $body.addClass('device-lg');
+            },
+            exit: function() {
+                $body.removeClass('device-lg');
+            }
+        }, {
+            breakpoint: 'laptop',
+            enter: function() {
+                $body.addClass('device-md');
+            },
+            exit: function() {
+                $body.removeClass('device-md');
+            }
+        }, {
+            breakpoint: 'tablet',
+            enter: function() {
+                $body.addClass('device-sm');
+            },
+            exit: function() {
+                $body.removeClass('device-sm');
+            }
+        }, {
+            breakpoint: 'handheld',
+            enter: function() {
+                $body.addClass('device-xs');
+            },
+            exit: function() {
+                $body.removeClass('device-xs');
+            }
+        }, {
+            breakpoint: 'smallest',
+            enter: function() {
+                $body.addClass('device-xxs');
+            },
+            exit: function() {
+                $body.removeClass('device-xxs');
+            }
+        }]);
     };
 
     //----------------------------------------------------/
     // PAGE LOADER
     //----------------------------------------------------/
-    INSPIRO.loader = function () {
+    INSPIRO.loader = function() {
 
         if (!$body.hasClass('no-page-loader')) {
 
@@ -226,14 +222,14 @@ var INSPIRO = {};
                 overlay: false,
                 overlayClass: 'animsition-overlay-slide',
                 overlayParentElement: 'body',
-                transition: function (url) {
+                transition: function(url) {
                     window.location.href = url;
                 }
 
             });
 
             //Skip loader if page has an js error or not loading for more than 5 seconds!
-            setTimeout(function () {
+            setTimeout(function() {
                 if ($(".animsition-loading").length) {
                     $body.addClass("no-page-loader");
                     $(".animsition-loading").hide();
@@ -245,7 +241,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // SCREEN SIZE CONTROL
     //----------------------------------------------------/
-    INSPIRO.sliderHeighControl = function () {
+    INSPIRO.sliderHeighControl = function() {
         if ($(".inspiro-slider").exists()) {
 
             var headerHeight = $header.height(),
@@ -291,13 +287,13 @@ var INSPIRO = {};
 
 
 
-    INSPIRO.screenSizeControl = function () {
+    INSPIRO.screenSizeControl = function() {
         if ($fullScreen.exists()) {
 
             var headerHeight = $header.height();
             var topbarHeight = $topbar.height();
 
-            $fullScreen.each(function () {
+            $fullScreen.each(function() {
                 var $elem = $(this),
                     elemHeight = $window.height();
 
@@ -306,7 +302,7 @@ var INSPIRO = {};
         }
 
         if ($halfScreen.exists()) {
-            $halfScreen.each(function () {
+            $halfScreen.each(function() {
                 var $elem = $(this),
                     elemHeight = $window.height();
 
@@ -318,9 +314,9 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // INSPIRO SLIDER
     //----------------------------------------------------/
-    INSPIRO.inspiroSlider = function () {
+    INSPIRO.inspiroSlider = function() {
         if ($(".inspiro-slider").exists()) {
-            $(".inspiro-slider").each(function () {
+            $(".inspiro-slider").each(function() {
 
                 var elem = $(this);
 
@@ -335,7 +331,8 @@ var INSPIRO = {};
                             margin: 0,
                             nav: true,
                             navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                                '<i class="fa fa-arrow-right icon-white"></i>'
+                            ],
                             autoplay: true,
                             dots: true,
                             autoplayHoverPause: true,
@@ -344,9 +341,9 @@ var INSPIRO = {};
                             smartSpeed: 1300,
                             singleItem: true,
                             callbacks: true,
-                            onInitialize: function (event) {
-                                setTimeout(function () {
-                                    elem.find(".owl-item:not(.active) .slide > video").each(function () {
+                            onInitialize: function(event) {
+                                setTimeout(function() {
+                                    elem.find(".owl-item:not(.active) .slide > video").each(function() {
                                         this.pause();
                                     });
                                 }, 100);
@@ -356,7 +353,7 @@ var INSPIRO = {};
                     }
 
                     var $captions = elem.find('.slide-captions > *');
-                    $captions.each(function () {
+                    $captions.each(function() {
                         var $captionElem = $(this);
                         var animationDuration = "1000ms";
                         if ($(this).data("animation-duration")) {
@@ -366,26 +363,26 @@ var INSPIRO = {};
                         $captionElem.addClass('slide-caption-hide');
                     });
 
-                    $captions.each(function (index) {
+                    $captions.each(function(index) {
                         var $captionElem = $(this),
                             captionDelay = $captionElem.data("caption-delay") || index * 80,
                             captionAnimation = $captionElem.data('caption-animation') || "fadeInUp";
-                        setTimeout(function () {
+                        setTimeout(function() {
                             $captionElem.removeClass('slide-caption-hide').addClass(captionAnimation);
                         }, captionDelay);
                     });
 
-                    elem.on('changed.owl.carousel', function (property) {
+                    elem.on('changed.owl.carousel', function(property) {
                         var current = property.item.index;
                         var currentSlide = $(property.target).find(".owl-item").eq(current);
                         var currentSlideCaptions = currentSlide.find(".slide-captions > *");
                         var currentSlideDark = currentSlide.find(".slide").hasClass("slide-dark");
 
-                        currentSlideCaptions.each(function (index) {
+                        currentSlideCaptions.each(function(index) {
                             var $captionElem = $(this),
                                 captionDelay = $captionElem.data("caption-delay") || (index * 350 + 1000),
                                 captionAnimation = $captionElem.data('caption-animation') || "fadeInUp";
-                            setTimeout(function () {
+                            setTimeout(function() {
                                 $captionElem.removeClass('slide-caption-hide').addClass(captionAnimation);
                             }, captionDelay);
                         });
@@ -404,8 +401,8 @@ var INSPIRO = {};
 */
                             //Pause HTML5 Video
                             if (currentSlide.find("video")) {
-                                setTimeout(function () {
-                                    currentSlide.find(".slide video").each(function () {
+                                setTimeout(function() {
+                                    currentSlide.find(".slide video").each(function() {
                                         this.play()
                                     });
                                 }, 1000)
@@ -416,15 +413,15 @@ var INSPIRO = {};
 
                     });
 
-                    elem.on('change.owl.carousel', function (property) {
+                    elem.on('change.owl.carousel', function(property) {
                         var currentSlideCaptions = $(property.target).find(".owl-item:not(.active)").find(".slide-captions > *");
-                        currentSlideCaptions.each(function () {
+                        currentSlideCaptions.each(function() {
                             var $captionElem = $(this),
                                 captionAnimation = $captionElem.data('caption-animation') || "fadeInUp";
                             $captionElem.removeClass(captionAnimation).addClass('slide-caption-hide');
                         });
 
-                        elem.find(".slide video").each(function () {
+                        elem.find(".slide video").each(function() {
                             this.pause()
                         });
                     });
@@ -437,7 +434,8 @@ var INSPIRO = {};
                             loop: true,
                             nav: false,
                             navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                                '<i class="fa fa-arrow-right icon-white"></i>'
+                            ],
                             autoplay: true,
                             dots: true,
                             navigation: true,
@@ -456,13 +454,13 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // CAROUSEL SLIDER
     //----------------------------------------------------/
-    INSPIRO.carouselInspiro = function () {
+    INSPIRO.carouselInspiro = function() {
 
         var $sliderCarousel = $('.carousel') || $('.owl-carousel'),
             $postCarousel = $(".post-mini-slider");
 
         if ($sliderCarousel.exists()) {
-            $sliderCarousel.each(function () {
+            $sliderCarousel.each(function() {
                 var element = $(this),
 
                     sliderCarouselColumns = element.attr('data-carousel-col') || "4",
@@ -489,7 +487,8 @@ var INSPIRO = {};
                         margin: Number($sliderCarouselMargins),
                         nav: $sliderCarouseNav,
                         navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                            '<i class="fa fa-arrow-right icon-white"></i>'
+                        ],
                         autoplay: $sliderCarouseAutoPlay,
                         autoplayTimeout: $carouselAutoplayTimeout,
                         loop: $carouselLoop,
@@ -508,7 +507,8 @@ var INSPIRO = {};
                         margin: Number($sliderCarouselMargins),
                         nav: $sliderCarouseNav,
                         navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                            '<i class="fa fa-arrow-right icon-white"></i>'
+                        ],
                         autoplay: $sliderCarouseAutoPlay,
                         autoplayHoverPause: true,
                         dots: $sliderCarouseDots,
@@ -536,8 +536,8 @@ var INSPIRO = {};
         }
 
         if ($postCarousel.exists()) {
-            $postCarousel.each(function () {
-                setTimeout(function () {
+            $postCarousel.each(function() {
+                setTimeout(function() {
                     $postCarousel.owlCarousel({
                         autoplay: true,
                         autoplayHoverPause: true,
@@ -553,13 +553,14 @@ var INSPIRO = {};
         }
 
         if ($("#slider-carousel").exists()) {
-            $("#slider-carousel").each(function () {
+            $("#slider-carousel").each(function() {
                 $("#slider-carousel").owlCarousel({
                     margin: 0,
                     loop: true,
                     nav: true,
                     navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                        '<i class="fa fa-arrow-right icon-white"></i>'
+                    ],
                     autoplay: true,
                     dots: false,
                     autoplayHoverPause: true,
@@ -575,10 +576,10 @@ var INSPIRO = {};
                 $('.owl-item.active .slider-content').addClass("animated fadeIn");
 
 
-                owl.on('changed.owl.carousel', function (event) {
+                owl.on('changed.owl.carousel', function(event) {
 
                     $('.owl-item:not(.active)').siblings().find(".slider-content").removeClass("animated fadeIn");
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $('.owl-item.active .slider-content').addClass("animated fadeIn");
                     }, 300);
 
@@ -601,7 +602,7 @@ var INSPIRO = {};
         }
         // News ticker
         if ($('.news-ticker-content').exists()) {
-            $('.news-ticker-content').each(function () {
+            $('.news-ticker-content').each(function() {
                 $('.news-ticker-content').owlCarousel({
                     autoplay: true,
                     autoplayHoverPause: true,
@@ -622,17 +623,19 @@ var INSPIRO = {};
             if ($('.tab-carousel').parent().hasClass('active')) {
                 $('.tab-carousel').owlCarousel({
                     navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                        '<i class="fa fa-arrow-right icon-white"></i>'
+                    ],
                     margin: 0,
                     nav: true,
                     dots: false,
                     items: 1
                 });
             } else {
-                $('.tabs-navigation li a').click(function () {
+                $('.tabs-navigation li a').click(function() {
                     $('.tab-carousel').owlCarousel({
                         navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                            '<i class="fa fa-arrow-right icon-white"></i>'
+                        ],
                         margin: 0,
                         nav: true,
                         dots: false,
@@ -835,13 +838,13 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // SMOTH SCROLL NAVIGATION
     //----------------------------------------------------/
-    INSPIRO.naTo = function () {
-        $('a.scroll-to, a.nav-to').on('click', function () {
+    INSPIRO.naTo = function() {
+        $('a.scroll-to, a.nav-to').on('click', function() {
             var $anchor = $(this),
                 activeClass = "menu-active";
-            
+
             $anchor.addClass(activeClass);
-            
+
             $('html, body').stop(true, false).animate({
                 scrollTop: $($anchor.attr('href')).offset().top
             }, 1500, 'easeInOutExpo');
@@ -853,7 +856,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // GO TO TOP
     //----------------------------------------------------/
-    INSPIRO.goToTop = function () {
+    INSPIRO.goToTop = function() {
 
         /*  if ($('.gototop').length > 0) {
 
@@ -879,7 +882,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // LOGO STATUS
     //----------------------------------------------------/
-    INSPIRO.logoStatus = function () {
+    INSPIRO.logoStatus = function() {
 
         if ($header.hasClass('header-navigation-light') && $window.width() < 991) {
             logo.find('img').attr('src', logoImg);
@@ -903,7 +906,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // STICKY HEADER
     //----------------------------------------------------/
-    INSPIRO.stickyHeaderStatus = function () {
+    INSPIRO.stickyHeaderStatus = function() {
         if ($header.exists()) {
             var headerOffset = $header.offset().top;
 
@@ -934,8 +937,8 @@ var INSPIRO = {};
                               $header.addClass('header-sticky');
                           }
       */
-    INSPIRO.stickyHeader = function () {
-        $window.on('scroll', function () {
+    INSPIRO.stickyHeader = function() {
+        $window.on('scroll', function() {
             INSPIRO.logoStatus();
             INSPIRO.stickyHeaderStatus();
 
@@ -945,9 +948,9 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // TOP BAR
     //----------------------------------------------------/
-    INSPIRO.topBar = function () {
+    INSPIRO.topBar = function() {
         if ($topbar.exists()) {
-            $("#topbar .topbar-dropdown .topbar-form").each(function (index, element) {
+            $("#topbar .topbar-dropdown .topbar-form").each(function(index, element) {
                 if ($window.width() - ($(element).width() + $(element).offset().left) < 0) {
                     $(element).addClass('dropdown-invert');
                 }
@@ -958,7 +961,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // TOP SEARCH
     //----------------------------------------------------/
-    $("#top-search-trigger").on("click", function () {
+    $("#top-search-trigger").on("click", function() {
         $body.toggleClass('top-search-active');
         $topSearch.find('input').focus();
         return false;
@@ -971,20 +974,20 @@ var INSPIRO = {};
     if (!$body.hasClass('device-lg') || !$body.hasClass('device-md')) {
 
         if ($mainmenu.hasClass('mega-menu')) {
-            $mainmenuitems.on('click', function () {
+            $mainmenuitems.on('click', function() {
                 $(this).parent('ul li').toggleClass("resp-active", 1000, "easeOutSine");
                 return false;
             });
-            $mainsubmenuitems.on('click', function () {
+            $mainsubmenuitems.on('click', function() {
                 $(this).parent('li').toggleClass('resp-active');
                 return false;
             });
         }
     }
 
-    INSPIRO.menuFix = function () {
+    INSPIRO.menuFix = function() {
         if ($body.hasClass('device-lg') || $body.hasClass('device-md')) {
-            $('ul.main-menu .dropdown:not(.mega-menu-item) ul ul').each(function (index, element) {
+            $('ul.main-menu .dropdown:not(.mega-menu-item) ul ul').each(function(index, element) {
                 if ($window.width() - ($(element).width() + $(element).offset().left) < 0) {
                     $(element).addClass('menu-invert');
                 }
@@ -994,18 +997,18 @@ var INSPIRO = {};
 
 
 
-    INSPIRO.mainMenu = function () {
+    INSPIRO.mainMenu = function() {
 
 
         if ($mainmenu.hasClass("slide-menu")) {
             $(".nav-main-menu-responsive").addClass("slide-menu-version");
-            $(".lines-button").on("click", function () {
+            $(".lines-button").on("click", function() {
                 $(this).toggleClass("tcon-transform");
                 $(".navigation-wrap").toggleClass("navigation-active");
                 $mainmenu.toggleClass("items-visible");
             });
         } else {
-            $(".lines-button").on("click", function () {
+            $(".lines-button").on("click", function() {
                 $(this).toggleClass("tcon-transform");
                 $(".navigation-wrap").toggleClass("navigation-active");
             });
@@ -1017,14 +1020,14 @@ var INSPIRO = {};
     // Side panel
     //----------------------------------------------------/
 
-    INSPIRO.sidePanel = function () {
+    INSPIRO.sidePanel = function() {
         if (sidePanel.exists()) {
 
             if ($body.hasClass("side-panel-static")) {
                 $body.addClass("side-push-panel side-panel-left side-panel-active");
 
             } else {
-                $(".side-panel-button button").on("click", function () {
+                $(".side-panel-button button").on("click", function() {
                     if ($body.hasClass("side-panel-active")) {
                         $body.removeClass("side-panel-active");
                     } else {
@@ -1059,9 +1062,9 @@ var INSPIRO = {};
     // VERTICAL MENU (DOTS)
     //----------------------------------------------------/
 
-    INSPIRO.verticalDotMenu = function () {
+    INSPIRO.verticalDotMenu = function() {
         if (navigationItems.exists()) {
-            navigationItems.on('click', function () {
+            navigationItems.on('click', function() {
                 navigationItems.removeClass('active');
                 $(this).addClass('active');
                 return false;
@@ -1073,9 +1076,9 @@ var INSPIRO = {};
     // FULLSCREEN MENU
     //----------------------------------------------------/
 
-    INSPIRO.fullScreenPanel = function () {
+    INSPIRO.fullScreenPanel = function() {
         if (fullScreenPanel.exists()) {
-            $("#fullscreen-panel-button").on("click", function () {
+            $("#fullscreen-panel-button").on("click", function() {
                 $body.toggleClass('fullscreen-panel-active');
                 return false;
             });
@@ -1086,9 +1089,9 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // TEXT ROTATOR
     //----------------------------------------------------/
-    INSPIRO.textRotator = function () {
+    INSPIRO.textRotator = function() {
         if ($textRotator.exists()) {
-            $textRotator.each(function () {
+            $textRotator.each(function() {
                 var $elem = $(this),
                     dataTextSeperator = $elem.attr('data-rotate-separator') || ",",
                     dataTextEffect = $elem.attr('data-rotate-effect') || "flipInX",
@@ -1106,14 +1109,14 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // ACCORDION
     //----------------------------------------------------/
-    INSPIRO.accordion = function () {
+    INSPIRO.accordion = function() {
         var $accs = $(classFinder + accordionItem);
 
-        $accs.length && ($accs.each(function () {
+        $accs.length && ($accs.each(function() {
             var $item = $(this);
 
             $item.hasClass(itemActive) ? $item.addClass(itemActive) : $item.find(classFinder + itemContent).hide();
-        }), $(classFinder + itemTitle).on("click", function (e) {
+        }), $(classFinder + itemTitle).on("click", function(e) {
 
             var $link = $(this),
                 $item = $link.parents(classFinder + accordionItem),
@@ -1135,10 +1138,10 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * TABS
      * --------------------------------------------------------------------------- */
-    INSPIRO.tabs = function () {
+    INSPIRO.tabs = function() {
         var $tabNavigation = $(".tabs-navigation a");
         if ($tabNavigation.exists()) {
-            $tabNavigation.on("click", function (e) {
+            $tabNavigation.on("click", function(e) {
                 $(this).tab("show"), e.preventDefault();
                 return false;
             });
@@ -1150,9 +1153,9 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * Animations
      * --------------------------------------------------------------------------- */
-    INSPIRO.animations = function () {
+    INSPIRO.animations = function() {
         if (dataAnimation.exists() && $body.hasClass('device-lg') || $body.hasClass('device-md')) {
-            dataAnimation.each(function () {
+            dataAnimation.each(function() {
                 $(this).addClass("animated");
                 var $elem = $(this),
                     animationType = $elem.attr("data-animation") || "fadeIn",
@@ -1161,8 +1164,8 @@ var INSPIRO = {};
 
 
                 if (animationDirection == "forward") {
-                    $elem.appear(function () {
-                        setTimeout(function () {
+                    $elem.appear(function() {
+                        setTimeout(function() {
                             $elem.addClass(animationType + " visible");
                         }, animationDelay);
 
@@ -1174,7 +1177,7 @@ var INSPIRO = {};
 
                 } else {
                     $elem.addClass("visible");
-                    $elem.on("click", function () {
+                    $elem.on("click", function() {
                         $elem.addClass(animationType);
                         return false;
                     });
@@ -1182,9 +1185,9 @@ var INSPIRO = {};
 
 
                 if ($elem.parents('.demo-play-animations').length) {
-                    $elem.on("click", function () {
+                    $elem.on("click", function() {
                         $elem.removeClass(animationType);
-                        setTimeout(function () {
+                        setTimeout(function() {
                             $elem.addClass(animationType);
                         }, 50);
                         return false;
@@ -1198,7 +1201,7 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * PARALLAX
      * --------------------------------------------------------------------------- */
-    INSPIRO.parallax = function () {
+    INSPIRO.parallax = function() {
         if ($parallax.exists() || $(".page-title-parallax")) {
 
             if ($body.hasClass('device-lg') || $body.hasClass('device-md')) {
@@ -1219,7 +1222,7 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * RESPONSIVE VIDEOS
      * --------------------------------------------------------------------------- */
-    INSPIRO.resposniveVideos = function () {
+    INSPIRO.resposniveVideos = function() {
         if ($().fitVids) {
             $("section, .content, .post-content, .ajax-quick-view,#slider:not(.revslider-wrap)").fitVids();
         }
@@ -1230,13 +1233,13 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * COUNTER NUMBERS
      * --------------------------------------------------------------------------- */
-    INSPIRO.counters = function () {
+    INSPIRO.counters = function() {
         if ($counter.exists()) {
-            $counter.each(function () {
+            $counter.each(function() {
                 var $elem = $(this);
 
                 if ($body.hasClass('device-lg') || $body.hasClass('device-md')) {
-                    $elem.appear(function () {
+                    $elem.appear(function() {
                         $elem.find('span').countTo();
                     });
                 } else {
@@ -1250,14 +1253,14 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * COUNTDOWN TIMER
      * --------------------------------------------------------------------------- */
-    INSPIRO.countdownTimer = function () {
+    INSPIRO.countdownTimer = function() {
 
         if ($countdownTimer.exists()) {
-            setTimeout(function () {
-                $('[data-countdown]').each(function () {
+            setTimeout(function() {
+                $('[data-countdown]').each(function() {
                     var $this = $(this),
                         finalDate = $(this).data('countdown');
-                    $this.countdown(finalDate, function (event) {
+                    $this.countdown(finalDate, function(event) {
                         $this.html(event.strftime('<div class="countdown-container"><div class="countdown-box"><div class="number">%-D</div><span>Day%!d</span></div>' + '<div class="countdown-box"><div class="number">%H</div><span>Hours</span></div>' + '<div class="countdown-box"><div class="number">%M</div><span>Minutes</span></div>' + '<div class="countdown-box"><div class="number">%S</div><span>Seconds</span></div></div>'));
 
                     });
@@ -1270,10 +1273,10 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * PROGRESS BARS
      * --------------------------------------------------------------------------- */
-    INSPIRO.progressBar = function () {
+    INSPIRO.progressBar = function() {
 
         if ($progressBar.exists()) {
-            $progressBar.each(function (i, elem) {
+            $progressBar.each(function(i, elem) {
                 var $elem = $(this),
                     percent = $elem.attr('data-percent') || "100",
                     delay = $elem.attr('data-delay') || "100",
@@ -1285,7 +1288,7 @@ var INSPIRO = {};
                     });
                 }
 
-                var progressBarRun = function () {
+                var progressBarRun = function() {
                     $elem.animate({
                         'width': percent + '%'
                     }, 'easeInOutCirc').addClass('progress-animated');
@@ -1294,8 +1297,8 @@ var INSPIRO = {};
                 };
 
                 if ($body.hasClass('device-lg') || $body.hasClass('device-md')) {
-                    $(elem).appear(function () {
-                        setTimeout(function () {
+                    $(elem).appear(function() {
+                        setTimeout(function() {
                             progressBarRun();
                         }, delay);
                     });
@@ -1316,10 +1319,10 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * PRI CHARTS
      * --------------------------------------------------------------------------- */
-    INSPIRO.pieChart = function () {
+    INSPIRO.pieChart = function() {
 
         if ($pieChart.exists()) {
-            $pieChart.each(function () {
+            $pieChart.each(function() {
 
                 var $elem = $(this),
                     pieChartSize = $elem.attr('data-size') || "160",
@@ -1334,7 +1337,7 @@ var INSPIRO = {};
                     'line-height': pieChartSize + 'px'
                 });
 
-                $elem.appear(function () {
+                $elem.appear(function() {
                     $elem.easyPieChart({
                         size: Number(pieChartSize),
                         animate: Number(pieChartAnimate),
@@ -1343,7 +1346,7 @@ var INSPIRO = {};
                         barColor: pieChartColor,
                         scaleColor: false,
                         lineCap: 'square',
-                        onStep: function (from, to, percent) {
+                        onStep: function(from, to, percent) {
                             $elem.find('span.percent').text(Math.round(percent));
                         }
                     });
@@ -1355,12 +1358,12 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * GOOGLE MAPS
      * --------------------------------------------------------------------------- */
-    INSPIRO.maps = function () {
+    INSPIRO.maps = function() {
 
         if ($map.exists()) {
 
 
-            $map.each(function () {
+            $map.each(function() {
 
                 var $elem = $(this),
                     mapAddress = $elem.attr('data-map-address') ? $elem.attr('data-map-address') : "Melbourne, Australia",
@@ -1376,7 +1379,7 @@ var INSPIRO = {};
                         iconsize: [40, 63],
                         iconanchor: [18, 60],
                     },
-                    }];
+                }];
 
                 $elem.gMap({
 
@@ -1410,10 +1413,10 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * MASONRY ISOTOPE
      * --------------------------------------------------------------------------- */
-    INSPIRO.masonryIsotope = function () {
+    INSPIRO.masonryIsotope = function() {
 
         var $isotops = $(".isotope");
-        $isotops.each(function () {
+        $isotops.each(function() {
             var isotopeTime,
                 $elem = $(this),
                 defaultFilter = $elem.data("isotopeDefaultFilter") || 0,
@@ -1439,7 +1442,7 @@ var INSPIRO = {};
 
                 }),
 
-                $window.resize(function () {
+                $window.resize(function() {
 
 
                     $elemContainer.css('margin-right', '-' + itemElementSpace + '%');
@@ -1456,7 +1459,7 @@ var INSPIRO = {};
                         itemWidth(1, $elemContainer, itemElement, itemElementSpace);
                     }
 
-                    clearTimeout(isotopeTime), isotopeTime = setTimeout(function () {
+                    clearTimeout(isotopeTime), isotopeTime = setTimeout(function() {
                         $elem.isotope("layout");
                     }, 300);
                 });
@@ -1466,7 +1469,7 @@ var INSPIRO = {};
 
             var $menu = $('[data-isotope-nav="' + id + '"]');
 
-            $menu.length && $menu.find("li:not('.link-only')").on("click", function (e) {
+            $menu.length && $menu.find("li:not('.link-only')").on("click", function(e) {
                 var $link = $(this);
 
                 $(".filter-active-title").empty().append($link.text());
@@ -1488,7 +1491,7 @@ var INSPIRO = {};
     };
 
     // Intellegent Grid
-    var itemWidth = function (columns, $elemContainer, itemElement, itemElementSpace) {
+    var itemWidth = function(columns, $elemContainer, itemElement, itemElementSpace) {
 
         var $findElement = $elemContainer.find(itemElement);
         var $findElementLarge = $elemContainer.find(".large-item");
@@ -1537,7 +1540,7 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * TOOLTIPS
      * --------------------------------------------------------------------------- */
-    INSPIRO.tooltip = function () {
+    INSPIRO.tooltip = function() {
 
         var $tooltip = $('[data-toggle="tooltip"]');
         if ($tooltip.exists()) {
@@ -1549,7 +1552,7 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * POPOVER
      * --------------------------------------------------------------------------- */
-    INSPIRO.popover = function () {
+    INSPIRO.popover = function() {
 
         var $popover = $('[data-toggle="popover"]');
         if ($popover.exists()) {
@@ -1565,7 +1568,7 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * LIGHTBOX
      * --------------------------------------------------------------------------- */
-    INSPIRO.lightBoxInspiro = function () {
+    INSPIRO.lightBoxInspiro = function() {
 
         if ($lightbox_image.exists()) {
             $lightbox_image.magnificPopup({
@@ -1574,7 +1577,7 @@ var INSPIRO = {};
         }
 
         if ($lightbox_gallery.exists()) {
-            $lightbox_gallery.each(function () {
+            $lightbox_gallery.each(function() {
                 $(this).magnificPopup({
                     delegate: 'a[data-lightbox="gallery-item"]',
                     type: 'image',
@@ -1586,7 +1589,7 @@ var INSPIRO = {};
         }
 
         if ($lightbox_iframe.exists()) {
-            $lightbox_iframe.each(function () {
+            $lightbox_iframe.each(function() {
                 $(this).magnificPopup({
                     type: 'iframe'
                 });
@@ -1594,11 +1597,11 @@ var INSPIRO = {};
         }
 
         if ($lightbox_ajax.exists()) {
-            $lightbox_ajax.each(function () {
+            $lightbox_ajax.each(function() {
                 $(this).magnificPopup({
                     type: 'ajax',
                     callbacks: {
-                        ajaxContentAdded: function (mfpResponse) {
+                        ajaxContentAdded: function(mfpResponse) {
                             INSPIRO.carouselInspiro();
                             INSPIRO.resposniveVideos();
                             INSPIRO.accordion();
@@ -1613,44 +1616,44 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * FLICKR WIDGET
      * --------------------------------------------------------------------------- */
-    INSPIRO.widget_twitter = function () {
+    INSPIRO.widget_twitter = function() {
 
-        setTimeout(function () {
-                if ($widget_twitter.length > 0) {
-                    $widget_twitter.each(function () {
-                        var $elem = $(this),
-                            twitterUsername = $elem.attr('data-username') || "ardianmusliu",
-                            twitterLimit = $elem.attr('data-limit') || 2,
-                            twitterDateFormat = $elem.attr('data-format') || '%b/%d/%Y',
-                            twitterLoadingText = $elem.attr('data-loading-text') || 'Loading...',
-                            twitterApiPAth = $elem.attr('data-loader') || "include/twitter/tweet.php",
-                            twitterAvatar = $elem.attr('data-avatar') || false;
-                        if (twitterAvatar == 'true') {
-                            twitterAvatar = "{{avatar}}";
-                        } else {
-                            twitterAvatar = "";
-                        }
-                        $elem.twittie({
-                            'username': twitterUsername,
-                            'count': twitterLimit,
-                            'dateFormat': twitterDateFormat,
-                            'template': twitterAvatar + '{{tweet}}<small>{{date}}</small>',
-                            'apiPath': twitterApiPAth,
-                            'loadingText': twitterLoadingText
-                        });
+        setTimeout(function() {
+            if ($widget_twitter.length > 0) {
+                $widget_twitter.each(function() {
+                    var $elem = $(this),
+                        twitterUsername = $elem.attr('data-username') || "ardianmusliu",
+                        twitterLimit = $elem.attr('data-limit') || 2,
+                        twitterDateFormat = $elem.attr('data-format') || '%b/%d/%Y',
+                        twitterLoadingText = $elem.attr('data-loading-text') || 'Loading...',
+                        twitterApiPAth = $elem.attr('data-loader') || "include/twitter/tweet.php",
+                        twitterAvatar = $elem.attr('data-avatar') || false;
+                    if (twitterAvatar == 'true') {
+                        twitterAvatar = "{{avatar}}";
+                    } else {
+                        twitterAvatar = "";
+                    }
+                    $elem.twittie({
+                        'username': twitterUsername,
+                        'count': twitterLimit,
+                        'dateFormat': twitterDateFormat,
+                        'template': twitterAvatar + '{{tweet}}<small>{{date}}</small>',
+                        'apiPath': twitterApiPAth,
+                        'loadingText': twitterLoadingText
                     });
-                }
-            }, 700);
+                });
+            }
+        }, 700);
     };
 
 
     /* ---------------------------------------------------------------------------
      * FLICKR WIDGET
      * --------------------------------------------------------------------------- */
-    INSPIRO.flickr_widget = function () {
+    INSPIRO.flickr_widget = function() {
 
         if ($flickr_widget.exists()) {
-            $flickr_widget.each(function () {
+            $flickr_widget.each(function() {
 
                 var $elem = $(this),
                     $flickrId = $elem.attr('data-flickr-id') || "52617155@N08",
@@ -1662,7 +1665,7 @@ var INSPIRO = {};
                         id: $flickrId
                     },
                     itemTemplate: '<a href="{{image}}" title="{{title}}"><img src="{{image_s}}" alt="{{title}}" /></a>'
-                }, function () {
+                }, function() {
                     $elem.magnificPopup({
                         delegate: 'a',
                         type: 'image',
@@ -1678,10 +1681,10 @@ var INSPIRO = {};
     /* ---------------------------------------------------------------------------
      * YOUTUBE BACKGROUND PLAYER
      * --------------------------------------------------------------------------- */
-    INSPIRO.youTubeBgPlayer = function () {
+    INSPIRO.youTubeBgPlayer = function() {
 
         if ($ytPlayer.exists()) {
-            $ytPlayer.each(function () {
+            $ytPlayer.each(function() {
 
 
                 var elem = $(this),
@@ -1728,8 +1731,8 @@ var INSPIRO = {};
                     elem.find("#youtube-background-controls").addClass("video-is-playing");
                 }
 
-                elem.on("YTPReady", function () {
-                    $("#youtube-background-controls").on("click", function () {
+                elem.on("YTPReady", function() {
+                    $("#youtube-background-controls").on("click", function() {
 
                         if (!$(this).hasClass("video-is-playing")) {
                             $(this).addClass("video-is-playing");
@@ -1744,7 +1747,7 @@ var INSPIRO = {};
                     var elemContainerHeight = elem.height();
 
                     if (ytPlayerAutoPause) {
-                        $window.on('scroll', function () {
+                        $window.on('scroll', function() {
                             if ($window.scrollTop() > elemContainerHeight) {
                                 $("#youtube-background-controls").addClass("video-is-playing");
                                 $ytPlayer.YTPPause();
@@ -1766,7 +1769,7 @@ var INSPIRO = {};
     //----------------------------------------------------/
     // Mouse Scroll
     //----------------------------------------------------/
-    INSPIRO.mouseScroll = function () {
+    INSPIRO.mouseScroll = function() {
 
         if ($body.hasClass('mouse-scroll') && $window.width() > 767) {
 
@@ -1786,9 +1789,9 @@ var INSPIRO = {};
         }
     }
 
-    INSPIRO.gridLayout = function () {
+    INSPIRO.gridLayout = function() {
         if ($gridLayout.length > 0) {
-            $gridLayout.each(function () {
+            $gridLayout.each(function() {
 
                 var elem = $(this),
                     gridItem = elem.attr('data-item') || "portfolio-item",
@@ -1800,7 +1803,7 @@ var INSPIRO = {};
                 elem.css("margin", "0 -" + gridMargin + "px -" + gridMargin + "px 0");
                 elem.find('.' + gridItem).css("padding", "0 " + gridMargin + "px " + gridMargin + "px 0");
 
-                setTimeout(function () {
+                setTimeout(function() {
                     elem.isotope({
                         layoutMode: gridLayoutMode,
                         transitionDuration: gridTransition,
@@ -1826,12 +1829,12 @@ var INSPIRO = {};
             });
 
             if ($gridFilter.length > 0) {
-                $gridFilter.each(function () {
+                $gridFilter.each(function() {
                     var elem = $(this),
                         elemLayoutCnt = elem.attr('data-layout'),
                         elemActive = elem.attr('data-active-class') || "active";
 
-                    elem.find('a').click(function () {
+                    elem.find('a').click(function() {
                         elem.find('li').removeClass(elemActive);
                         $(this).parent('li').addClass(elemActive);
                         $(elemLayoutCnt).isotope({
@@ -1849,11 +1852,11 @@ var INSPIRO = {};
         }
     };
 
-    INSPIRO.gridLayoutRefresh = function () {
+    INSPIRO.gridLayoutRefresh = function() {
         if ($gridLayout.length > 0) {
-            $gridLayout.each(function () {
+            $gridLayout.each(function() {
                 var elem = $(this);
-                setTimeout(function () {
+                setTimeout(function() {
                     elem.isotope('layout');
                 }, 2000);
             });
@@ -1861,7 +1864,7 @@ var INSPIRO = {};
     };
 
     //Window load functions
-    $window.load(function () {
+    $window.load(function() {
         INSPIRO.progressBar(),
             INSPIRO.pieChart(),
             INSPIRO.carouselInspiro(),
@@ -1907,7 +1910,7 @@ var INSPIRO = {};
     );
 
     //Document resize functions
-    $window.resize(function () {
+    $window.resize(function() {
         INSPIRO.logoStatus(),
             INSPIRO.screenSizeControl(),
             INSPIRO.sliderHeighControl(),
@@ -1916,19 +1919,22 @@ var INSPIRO = {};
     });
 
     //Document scrool functions
-    $window.scroll(function () {
+    $window.scroll(function() {
         INSPIRO.goToTop()
     });
 
-$(document).ready(function(){
-        $('.overlay_popup').delay(2000).queue(function(){
+    //new popup
+    $(document).ready(function() {
+        $('.overlay_popup').delay(500).queue(function() {
             $('.overlay_popup').addClass('popup-open')
         });
     });
 
     $.fn.popupClose = function() {
-      $( ".overlay_popup" ).removeClass("popup-open");
-      return this;
-    };  
+        $(".overlay_popup").removeClass("popup-open");
+        return this;
+    };
+
+
 
 })(jQuery);

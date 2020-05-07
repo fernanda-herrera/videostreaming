@@ -1,11 +1,12 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -14,36 +15,41 @@ p {
 
 .video-Container {
     width: 285px;
-    height: 200px;
-    background-color: gray;
+    height: 150px;
+    background-color: #001e6f;
     margin-top: 10px;
     display: inline-block;
+    object-fit: contain;
+    font-size: 12px;
+    color: #fff;
 }
 
 .img-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
-.cam {
-    position: absolute;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    width: 30px;
-    height: 30px;
-}
-
-.mic {
-    position: absolute;
-    display: flex;
-    justify-content: left;
-    align-items: left;
     width: 30px;
     height: 30px;
     padding-left: 50px;
+}
+
+.nametxt {
+    font-size: 12px;
+}
+
+.camButton {
+    background-color: red;
+}
+
+.micButton {
+    background-color: grey;
+}
+
+.leaveButton {
+    background-color: green;
+}
+
+.embeed {
+    object-fit: contain;
+    width: 1309px;
+    height: 480px;
 }
 
 .popup {
