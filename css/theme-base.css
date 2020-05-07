@@ -16,7 +16,8 @@ body {
 }
 
 .container {
-    width: 100% !important;
+    width: 90% !important;
+    background: url("images/bg2.jpg");
 }
 
 
@@ -289,8 +290,7 @@ h6.font-parisienne {
 
 #header {
     position: relative;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
+    background-color: #181e35;
     z-index: 199 !important;
 }
 
@@ -2011,7 +2011,7 @@ body.wide #header.header-fullwidth nav .main-menu .mega-menu-item .dropdown-menu
 #header.header-mini #top-search a,
 #header.header-mini .nav-main-menu-responsive,
 #header.header-mini .side-panel-button {
-    height: 60px;
+    height: 50px;
 }
 
 #header.header-mini #mainMenu>ul>li>a {
@@ -2084,7 +2084,7 @@ body.wide #header.header-fullwidth nav .main-menu .mega-menu-item .dropdown-menu
 #mainMenu>ul,
 #header.header-sticky:not(.header-static) .nav-main-menu-responsive,
 #header .side-panel-button {
-    height: 90px;
+    height: 60px;
 }
 
 #side-panel #mainMenu>ul {
@@ -3524,7 +3524,7 @@ body.device-xxs .text-medium-light {
 .text-dark label,
 .text-dark div:not(.alert),
 .text-dark span:not(.btn-label) {
-    color: #111 !important;
+    color: #2d2e82!important;
 }
 
 .text-grey,

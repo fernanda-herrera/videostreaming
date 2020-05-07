@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #001e6f;
+    background: #181e35;
 }
 
 p {
@@ -16,7 +16,7 @@ p {
 .video-Container {
     width: 285px;
     height: 150px;
-    background-color: #001e6f;
+    background-color: #181e35;
     margin-top: 10px;
     display: inline-block;
     object-fit: contain;
@@ -35,25 +35,22 @@ p {
 }
 
 .camButton {
-    background-image: url(images/cam-on.svg);
-    font-size: 0;
+    background-image: url(images/favicon.png);
 }
 
 .micButton {
-    background-color: grey;
-    font-size: 0;
+    background-image: url(images/mic-on.svg);
 }
 
 .leaveButton {
     background-color: green;
     margin-left: 150px;
-    font-size: 0;
 }
 
 .embeed {
     object-fit: contain;
     width: 1309px;
-    height: 480px;
+    height: 300px;
 }
 
 .popup {

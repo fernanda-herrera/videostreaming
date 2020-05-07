@@ -1,43 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-	<title>Promental Call</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-	<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.2.js"></script>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.2.js"></script>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>streaming</title>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/animateit/animate.min.css" rel="stylesheet">
 
-	<!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <!-- Template base -->
+    <link href="css/theme-base.css" rel="stylesheet">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <!-- Template elements -->
+    <link href="css/theme-elements.css" rel="stylesheet">
 
+    <!-- Responsive classes -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+    <!-- LOAD GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!--VENDOR SCRIPT-->
+    <script src="vendor/jquery/jquery-1.11.2.min.js"></script>
+    <script src="vendor/plugins-compressed.js"></script>
 
 </head>
+
 <body>
-	<div>
-		<label>Nombre usuario</label>
-		<input  type="text" placeholder="nombre para el chat" id="myInput">
-		<button onclick="entrarAlChat()">Entrar</button>
-	</div>
-	<div id="vid-list">
+    <!-- SECTION IMAGE FULLSCREEN -->
+    <section class="parallax text-light fullscreen" style="background: url('images/bg.jpg')">
+        <div class="container container-fullscreen">
+            <div class="text-middle text-center text-light">
+                <h1 class="text-uppercase text-large" data-animation="fadeInUp">IMAGE BACKGROUND</h1>
+                <p class="lead" data-animation="fadeInUp" data-animation-delay="600">Beautiful websites are now easy to made! Ready to Purchase POLO Template?</p>
+                <span data-animation="fadeInUp" data-animation-delay="900">
+			<a href="LINK-PURCHASE" class="button transparent rounded effect icon-top"><span><i class="fa fa-tint"></i>Purchase</span></a>
+                </span>
 
-	</div>
-	<!--<div class="video-Container">
-		<p>Nombre</p>
-		<button>mic</button>
-		<button>cam</button>
-	</div>-->
+            </div>
+        </div>
+    </section>
+    <!-- END: SECTION IMAGE FULLSCREEN -->
 
 
-
-	<script src="js/rtcmain.js"></script>
-	<script src="js/rtcPublishStream.js"></script>
-	<script src="js/rtcSuscribeStreaming.js"></script>
-	<script src="js/main.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/rtcmain.js"></script>
+    <script src="js/rtcPublishStream.js"></script>
+    <script src="js/rtcSuscribeStreaming.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>
